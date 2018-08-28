@@ -10,7 +10,9 @@ export class MapContainer extends Component {
   constructor(props) {
     super(props);
 
-
+    this.state = {
+      jobLocation: {lat: 39.758680, lng: -104.998634}
+    }
   }
 
 
