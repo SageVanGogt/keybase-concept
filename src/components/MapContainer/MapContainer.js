@@ -24,7 +24,12 @@ export class MapContainer extends Component {
   render() {
     return (
       <div className="map-container">
-       
+        <MapComponent
+          position={this.state.jobLocation}
+          googleMapURL={mapUrl}
+          loadingElement={this.loadingElement()}
+          containerElement={this.containerElement()}
+          mapElement={this.mapElement()} /> 
       </div>
     );
   }
