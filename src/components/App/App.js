@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MapContainer from './../MapContainer/MapContainer';
 import * as API from './../../apiCalls/apiCalls';
+import * as cleaner from './../../cleaners/locationCleaner';
 
 class App extends Component {
   constructor() {
