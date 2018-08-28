@@ -1,0 +1,12 @@
+.Me-map {
+  position: fixed;
+  top: 200px;
+  height: 40vh;
+  width: 100vw;
+  z-index: -3;
+}
+
+.map-container {
+  position: fixed;
+  height: 100vh;
+}

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { mapKey } from './../../apiKey';
 import PropTypes from 'prop-types';
 import MapComponent from '../MapComponent/MapComponent';
 import './MapContainer.css';
@@ -16,7 +15,7 @@ export class MapContainer extends Component {
   }
 
 
-  containerElement = () => (<div className="Job-map"/>);
+  containerElement = () => (<div className="Me-map"/>);
   
   loadingElement = () => (<div style={{ height: `100%` }}/>);
   mapElement = () => (<div style={{ height: `100%` }} />);
@@ -25,7 +24,7 @@ export class MapContainer extends Component {
     return (
       <div className="map-container">
         <MapComponent
-          position={this.state.jobLocation}
+          position={this.props.currentLocation}
           googleMapURL={mapUrl}
           loadingElement={this.loadingElement()}
           containerElement={this.containerElement()}
@@ -35,8 +34,12 @@ export class MapContainer extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  currentLocation: state.currentLocation
+});
+
 MapContainer.propTypes = {
   jobLocation: PropTypes.object
 };
 
-export default MapContainer;
+export default connect(mapStateToProps, null)(MapContainer);
