@@ -20,7 +20,21 @@ class App extends Component {
     });
   }
 
-  
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    const address = this.formatAddress();
+    try {
+      const locationInfo = await API.fetchGeocode(address);
+      if (locationInfo.status === "ZERO_RESULTS") {
+        this.props.setError('That address could not be found');
+        return;
+      }
+      const cleanLocation = cleaner.geocodeCleaner(locationInfo);
+      this.props.setLocation(cleanLocation);
+    } catch (error) {
+      throw Error(error.message);
+    }
+  };
 
   render() {
     return (
