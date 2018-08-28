@@ -16,6 +16,10 @@ export class MapContainer extends Component {
   }
 
 
+  containerElement = () => (<div className="Job-map"/>);
+  
+  loadingElement = () => (<div style={{ height: `100%` }}/>);
+  mapElement = () => (<div style={{ height: `100%` }} />);
 
   render() {
     return (
