@@ -3,6 +3,7 @@ import './App.css';
 import MapContainer from './../MapContainer/MapContainer';
 import * as API from './../../apiCalls/apiCalls';
 import * as cleaner from './../../cleaners/locationCleaner';
+import { connect } from 'react-redux';
 
 class App extends Component {
   constructor() {
@@ -81,10 +82,14 @@ class App extends Component {
             className="address-sbmt-btn"
             value="Submit" />
         </form>
-
       </div>
     );
   }
 }
 
-export default App;
+export const mapDispatchToProps = (dispatch) => ({
+  setLocation: (location) => 
+    dispatch(addCurrentLocation(location))
+});
+
+export default connect(null, mapDispatchToProps)(App);
