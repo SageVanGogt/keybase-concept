@@ -4,6 +4,7 @@ import MapContainer from './../MapContainer/MapContainer';
 import * as API from './../../apiCalls/apiCalls';
 import * as cleaner from './../../cleaners/locationCleaner';
 import { connect } from 'react-redux';
+import * as actions from './../../actions/location';
 
 class App extends Component {
   constructor() {
@@ -89,7 +90,7 @@ class App extends Component {
 
 export const mapDispatchToProps = (dispatch) => ({
   setLocation: (location) => 
-    dispatch(addCurrentLocation(location))
+    dispatch(actions.addCurrentLocation(location))
 });
 
 export default connect(null, mapDispatchToProps)(App);
