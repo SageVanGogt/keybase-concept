@@ -25,6 +25,7 @@ export class MapContainer extends Component {
 }
 
 MapContainer.propTypes = {
+  jobLocation: PropTypes.object
 };
 
 export default MapContainer;
