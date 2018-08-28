@@ -11,3 +11,10 @@ const fetchGeocode = async (address) => {
     throw error;
   }
 }; 
+
+const reverseGeoCode = async (lat, lng) => {
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.REACT_APP_GEO_KEY}`;
+  const response = await fetch(url);
+  const geoData = await response.json();
+  return geoData;
+}
