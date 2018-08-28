@@ -8,7 +8,13 @@ import PropTypes from 'prop-types';
   ) => {
  
     return (
-
+      <GoogleMap
+        defaultZoom={16}
+        center={position}>
+        <Marker
+          position={position}>
+        </Marker>
+      </GoogleMap>
     );
   }));
   
