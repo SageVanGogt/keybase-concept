@@ -24,7 +24,7 @@ export class MapContainer extends Component {
     return (
       <div className="map-container">
         <MapComponent
-          position={this.state.jobLocation}
+          position={this.props.currentLocation}
           googleMapURL={mapUrl}
           loadingElement={this.loadingElement()}
           containerElement={this.containerElement()}
@@ -34,8 +34,12 @@ export class MapContainer extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  currentLocation: state.currentLocation
+});
+
 MapContainer.propTypes = {
   jobLocation: PropTypes.object
 };
 
-export default MapContainer;
+export default connect(mapStateToProps, null)(MapContainer);
