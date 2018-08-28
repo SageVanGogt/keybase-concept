@@ -50,8 +50,37 @@ class App extends Component {
     return (
       <div className="App">
         <MapContainer />
+        <form
+              action="submit"
+              onSubmit={this.handleSubmit}
+              className="current-location-form">
+              <legend className="address-form-legend">
+                Enter your full address here.
+              </legend>
+              <input
+                type="text"
+                name="street"
+                onChange={this.handleChange}
+                placeholder="street"
+                className="street-input" />
+              <input
+                type="text"
+                name="city"
+                onChange={this.handleChange}
+                placeholder="city"
+                className="city-input" />
+              <input
+                type="text"
+                name="state"
+                onChange={this.handleChange}
+                placeholder="state"
+                className="state-input" />
+              <input
+                type="submit"
+                className="address-sbmt-btn"
+                value="Submit" />
+            </form>
 
-        
       </div>
     );
   }
