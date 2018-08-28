@@ -11,7 +11,7 @@ describe('fetchGeocode', () => {
   })
 
   it('should call fetch with the correct params', async () => {
-    let expected = `https://maps.googleapis.com/maps/api/geocode/json?address=${mockAddress}&key=${geoKey}`;
+    let expected = `https://maps.googleapis.com/maps/api/geocode/json?address=${mockAddress}&key=${process.env.REACT_APP_GEO_KEY}`;
     await API.fetchGeocode(mockAddress);
 
     expect(window.fetch).toHaveBeenCalledWith(expected);
@@ -33,7 +33,7 @@ describe('reverseGeoCode', () => {
   beforeEach(() => {
     mockLat = 23;
     mockLng = 23;
-    url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${mockLat},${mockLng}&key=${geoKey}`;
+    url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${mockLat},${mockLng}&key=${process.env.REACT_APP_GEO_KEY}`;
     window.fetch = jest.fn().mockImplementation(() => 
       Promise.resolve({
         status: 200,
