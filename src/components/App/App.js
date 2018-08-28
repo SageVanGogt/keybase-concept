@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MapContainer from './../MapContainer/MapContainer';
+import * as API from './../../apiCalls/apiCalls';
 
 class App extends Component {
   constructor() {
@@ -36,10 +37,21 @@ class App extends Component {
     }
   };
 
+  formatAddress = () => {
+    const street = this.state.street.replace(' ', '+');
+    const city = this.state.city.replace(' ', '+');
+    const state = this.state.state.replace(' ', '+');
+    return (
+      `${street},+${city},+${state}`
+    );
+  };
+
   render() {
     return (
       <div className="App">
         <MapContainer />
+
+        
       </div>
     );
   }
