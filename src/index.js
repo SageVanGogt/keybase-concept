@@ -11,9 +11,7 @@ const store = createStore(rootReducer, devTools);
 
 render(
   <Provider store={store} >
-    <Router>
-      <App />
-    </Router>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
