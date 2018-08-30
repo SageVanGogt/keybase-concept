@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MapComponent from '../MapComponent/MapComponent';
 import './MapContainer.css';
+import { connect } from 'react-redux';
 
 const mapUrl = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAP_KEY}&v=3.exp&libraries=geometry,drawing,places`;
 
