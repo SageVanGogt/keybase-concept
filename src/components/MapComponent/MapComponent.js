@@ -3,6 +3,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker }
   from 'react-google-maps';
 import PropTypes from 'prop-types';
 
+
   export const MapComponent = withScriptjs(withGoogleMap((
     { position, ...props }
   ) => {
